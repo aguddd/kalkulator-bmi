@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="main">
+    <div class="colm-1">
+        <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh
+            yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat.
+            Bagaimana denganmu?
+
+        </p>
+        <p>Yuk, Hitung sekarang di kalkulator BMI.</p>
+    <form action="" class="formkalkulasi">
+        <p class="alert"></p>
+        <div class="container">
+            <div class="field">
+                <label for="nilaiTB">Tinggi Badan</label>
+                <input type="text" class="tinggi-badan" id="tinggi-badan">
+            </div>
+            <div class="field">
+                <label for="nilaiBB">Berat Badan</label>
+                <input type="text" class="berat-badan" id="berat-badan">
+            </div>
+        </div>
+        <button type="button" class="btn btn1" onclick="kirim()">Kirim</button>
+        <button type="button" class="btn btn2" onclick="">Kirim</button>
+    </form>
+    <h3>Keunggulan Fitur</h3>
+    <ol>
+        <li>Menghitung berat badan</li>
+        <li>Menentukan kategori berat badan ideal atau tidak</li>
+        <li>Mempersiapkan program penurunan berat badan</li>
+    </ol>
+    <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita Hamil atau menyusui tidak boleh
+        mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang
+        memenuhi syarat seperti dokter.
+    </p>
+    <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum
+        , Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi
+        dengan kuadrat tinggi badan anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.
+    </p>
+    </div>
+    <div class="informasi">
+        <h2>Hasil</h2>
+        <div class="hasil">
+            <h3>Berat Badan Lebih</h3>
+            <div class="nilai-hasil">24.7</div>
+            <p>Anda memiliki berat badan berlebih</p>
+            <button class="btn btn1">Download Hasil BMI</button>
+        </div>
+        <p>Hasil BMI diantara 23 dan 25</p>
+        <p>Anda berada dalam kategori overweight atau berat badan berlebih</p>
+        <p>Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalor makanan yang di konsumsi dan berolahraga</p>
+    </div>
+    </section>
+    <script>
+        let alertValidate = document.querySelector('.alert');
+        let tinggiValidate = document.querySelector('.tinggi-badan');
+        let beratValidate = document.querySelector('.berat-badan');
+
+        function kirim(){
+            let nilaiTinggiBadan = document.getElementById('tinggi-badan').value;
+            let nilaiBeratBadan = document.getElementById('berat-badan').value;
+            // console.log(nilaiTinggiBadan);
+            // console.log(nilaiBeratBadan);
+            if(nilaiTinggiBadan){
+                tinggiValidate.classList.remove('merah');
+                console.log(nilaiTinggiBadan)
+
+            }else if(!nilaiTinggiBadan){
+                
+                console.log('kosong');
+                alertValidate.innerHTML = "Harap isi semua data";
+                tinggiValidate.classList.add('merah');
+            }
+            
+            if(nilaiBeratBadan){
+                beratValidate.classList.remove('merah');
+                console.log(nilaiBeratBadan)
+
+            }else if(!nilaiBeratBadan)   {
+                console.log('kosong');
+                alertValidate.innerHTML = "Harap isi semua data";
+                beratValidate.classList.add('merah');
+            }
+            
+        }
+    </script>
+</body>
+</html>
